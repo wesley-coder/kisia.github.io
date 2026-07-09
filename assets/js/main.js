@@ -3,7 +3,11 @@ import { projetos } from "./projetos.js";
 
 const navigation = document.querySelector("#navigation");
 const backToTopButton = document.querySelector("#backToTopButton");
-const toggle = document.querySelector("#sw-checkbox");
+if(toggle){
+  toggle.addEventListener("change", () => {
+    document.body.classList.toggle("light-mode");
+  });
+}
 const projectsSection = document.querySelector("#projects .wrapper");
 
 const notebook_1 = document.querySelector("#notebook-1");
@@ -12,16 +16,27 @@ const notebook_2_white = document.querySelector("#notebook-2-white");
 const vidro = document.querySelector("#vidro");
 
 window.addEventListener("load", function begin() {
-  projects(projectsSection);
+
+  if (projectsSection) {
+    projects(projectsSection);
+  }
+
   const desafioBtn = document.querySelector("#desafio");
 
-  desafioBtn.addEventListener("click", () => {
-    desafios(projectsSection);
-    document
-      .querySelector("#backToProjectsBtn")
-      .addEventListener("click", begin);
-  });
+  if (desafioBtn) {
+    desafioBtn.addEventListener("click", () => {
+      desafios(projectsSection);
+
+      const backBtn = document.querySelector("#backToProjectsBtn");
+
+      if (backBtn) {
+        backBtn.addEventListener("click", begin);
+      }
+    });
+  }
+
 });
+
 
 window.addEventListener("scroll", onScroll);
 onScroll();
@@ -60,11 +75,15 @@ function activateMenuAtCurrentSection(section) {
   const sectionId = section.getAttribute("id");
   const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
 
-  menuElement.classList.remove("active");
+if(menuElement){
 
-  if (sectionBoundaries) {
-    menuElement.classList.add("active");
-  }
+    menuElement.classList.remove("active");
+
+    if(sectionBoundaries){
+        menuElement.classList.add("active");
+    }
+
+}
 }
 
 function showNavOnScroll() {

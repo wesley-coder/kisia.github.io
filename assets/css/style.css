@@ -29,7 +29,10 @@ html {
   scroll-behavior: smooth;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 90c50b30b25b8352c3ed0bc72104e3dbcdcfc9a4
 html,
 body {
   width: 100%;
@@ -247,6 +250,7 @@ body nav#navigation .social-links li:nth-child(4) svg:hover path:nth-child(2) {
   stroke: var(--paragraph-2);
 }
 
+<<<<<<< HEAD
 #services {
 
     padding:100px 0;
@@ -475,6 +479,8 @@ margin-top:40px;
 }
 
 
+=======
+>>>>>>> 90c50b30b25b8352c3ed0bc72104e3dbcdcfc9a4
 /*===== NAVIGATION ===================================*/
 
 nav {
@@ -724,6 +730,7 @@ body.menu-expanded button path {
   }
 }
 
+<<<<<<< HEAD
 .greeting {
     display:block;
     font-size:1.2rem;
@@ -994,6 +1001,8 @@ body.menu-expanded button path {
     max-width:420px;
 
 }
+=======
+>>>>>>> 90c50b30b25b8352c3ed0bc72104e3dbcdcfc9a4
 #home .wrapper::before {
   content: "";
   display: block;
